@@ -1,11 +1,13 @@
-<?php $__env->startSection('content'); ?>
+<?php $__env->startSection('title'); ?> <?php echo e('Create New Product'); ?> <?php $__env->stopSection(); ?>
 
+
+<?php $__env->startSection('content'); ?>
 <div class="row">
     <div class="col-lg-12 margin-tb">
-        <div class="pull-left">
+        <div class="float-left">
             <h2>Add New Product</h2>
         </div>
-        <div class="pull-right">
+        <div class="float-right">
             <a class="btn btn-primary" href="<?php echo e(route('products.index')); ?>"> Back</a>
         </div>
     </div>
@@ -20,13 +22,12 @@
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </ul>
     </div>
-
 <?php endif; ?>
 
 <form action="<?php echo e(route('products.store')); ?>" method="POST">
     <?php echo csrf_field(); ?>
 
-    <div class="row">
+     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Name:</strong>
@@ -45,7 +46,5 @@
     </div>
 
 </form>
-
-
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('products.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Applications/XAMPP/xamppfiles/htdocs/de-crud/laravel-crud/resources/views/products/create.blade.php ENDPATH**/ ?>
